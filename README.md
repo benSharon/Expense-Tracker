@@ -52,8 +52,35 @@ python expense_tracker_cli.py summary --month 09
 ```
 
 ### List Expenses
+```
+python expense_tracker_cli.py list
+```
+```
++----+------------+--------------+--------+----------+
+| id |    date    | description  | amount | category |
++----+------------+--------------+--------+----------+
+| 2  | 2024-09-18 |  Groceries   |  $50   |   Food   |
++----+------------+--------------+--------+----------+
+| 3  | 2024-08-18 |    LG TV     |  $400  |  Movie   |
++----+------------+--------------+--------+----------+
+| 4  | 2024-08-18 |  Samsung TV  |  $900  |  Movie   |
++----+------------+--------------+--------+----------+
+| 5  | 2024-09-18 | Gaming mouse | $4500  |  Gaming  |
++----+------------+--------------+--------+----------+
+| 6  | 2024-09-19 |   Munchies   |  $50   |   Food   |
++----+------------+--------------+--------+----------+
+```
 ```bash
 python expense_tracker_cli.py list --category "Food"
+```
+```
++----+------------+-------------+--------+----------+
+| id |    date    | description | amount | category |
++----+------------+-------------+--------+----------+
+| 2  | 2024-09-18 |  Groceries  |  $50   |   Food   |
++----+------------+-------------+--------+----------+
+| 6  | 2024-09-19 |   Munchies  |  $50   |   Food   |
++----+------------+-------------+--------+----------+
 ```
 
 ### Export Expenses to CSV
@@ -80,6 +107,29 @@ python expense_tracker_cli.py export --json-file expenses.json --to-csv expenses
 To install these dependencies, run:
 ```bash
 pip install pandas prettytable
+```
+
+## Help
+To see the help message:
+```
+python .\expense_tracker_cli.py --help
+```
+```
+usage: python expense_tracker_cli.py COMMAND [OPTIONS] [ARGS]...
+
+A CLI tool to manage expenses by adding, updating, deleting, summarizing expense entries and exporting json file to csv file
+
+positional arguments:
+  {add,update,delete,summary,list,export}
+    add                 add an expense entry
+    update              update an existing expense entry
+    delete              delete an expense entry
+    summary             summarize expense entries (sum)
+    list                display expenses
+    export              export json file to designated type
+
+options:
+  -h, --help            show this help message and exit
 ```
 
 ## License
