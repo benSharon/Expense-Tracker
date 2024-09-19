@@ -77,9 +77,9 @@ def update_expense(
             # Clearing json file
             clear_json(EXPENSES_JSON)
             write_to_json(expenses_data, EXPENSES_JSON, "w")
-            print(f"Expense {expense_id} has been updated successfully.")
+            print(f"\nExpense {expense_id} has been updated successfully.\n")
         else:
-            print(f"Expense {expense_id} not found.")
+            print(f"\nExpense {expense_id} not found.\n")
 
 
 def delete_expense(expense_id: int):
