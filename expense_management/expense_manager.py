@@ -142,4 +142,4 @@ def export_to_csv(json_file: str, csv_file: str):
         data_file = pandas.read_json(json_file)
 
     data_file.to_csv(csv_file, encoding="utf-8", index=False)
-    print(f"{json_file} has been successfully exported to {csv_file}")
+    print(f"\n'{json_file}' has been successfully exported to '{csv_file}'\n")
