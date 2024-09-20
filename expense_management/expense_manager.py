@@ -123,7 +123,7 @@ def sum_expense_values(month: str | None):
             month_amount_list = []
             for expense in expense_data:
                 if int(expense["date"].split("-")[1]) == int(month):
-                    month_amount_list.append(int(expense["amount"][1:]))
+                    month_amount_list.append(int(expense["amount"][1:]))   # Skipping the '$' in the string
 
             if not month_amount_list:
                 print(f"\nNo expenses found for month '{month}'.\n")
